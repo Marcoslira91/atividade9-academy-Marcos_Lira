@@ -1,4 +1,4 @@
-describe("Primeiro fluxo", () => {
+describe("Segundo fluxo", () => {
     it("Verificar se o título da pasta é App", async () => {
         const textoTitulo = await $("android.widget.TextView").getText();
         expect(textoTitulo).toBe("App");
@@ -18,13 +18,13 @@ describe("Primeiro fluxo", () => {
         expect(visibilidadedeBotao).toBe(true);
      });
 
-     it("Verificar se o botão Alert Dialogs funciona", async () => {
+     it("Verificar se o botão OK Cancel dialog with a message", async () => {
         await $('android=new UiSelector().text("App").className("android.widget.TextView")').click();
         await $("id=action_bar").click();
         await $('android=new UiSelector().text("Alert Dialogs").className("android.widget.TextView")').click();
-        await $("id=two_buttons").click();
+        await $("id=select_button").click();
         const visibilidadedeBotao =  await $("id=alertTitle").isDisplayed(); //true;
         expect(visibilidadedeBotao).toBe(true);
-     });
+       });
 
 });
